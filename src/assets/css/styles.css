@@ -11432,12 +11432,12 @@ html {
 }
 
 .masthead {
-  padding-top: calc(6rem + 74px);
-  padding-bottom: 6rem;
+  padding-top: calc(1.5rem+74px);
+  padding-bottom: 1.5rem;
 }
 .masthead .masthead-heading {
-  font-size: 2.75rem;
-  line-height: 2.75rem;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
 }
 .masthead .masthead-subheading {
   font-size: 1.25rem;
@@ -11448,12 +11448,11 @@ html {
 
 @media (min-width: 992px) {
   .masthead {
-    padding-top: calc(6rem + 104px);
-    padding-bottom: 6rem;
+    padding-top: calc(1.5rem + 104px);
   }
   .masthead .masthead-heading {
-    font-size: 4rem;
-    line-height: 3.5rem;
+    font-size: 2rem;
+    line-height: 0.5rem;
   }
   .masthead .masthead-subheading {
     font-size: 1.5rem;

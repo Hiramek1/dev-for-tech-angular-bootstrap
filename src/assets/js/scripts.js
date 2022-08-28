@@ -26,8 +26,29 @@ window.addEventListener('DOMContentLoaded', event => {
     // Shrink the navbar 
     navbarShrink();
 
-    // Shrink the navbar when page is scrolled
+    // Shrink the navbar buttons when page is scrolled
     document.addEventListener('scroll', navbarShrink);
+
+    var navLinkShrink = function () {
+        const responsiveNavItems = [].slice.call(
+            document.querySelectorAll('#navbarResponsive .nav-link')
+        );
+        if (!responsiveNavItems) {
+            return;
+        }
+        if (window.scrollY === 0) {
+            responsiveNavItems.classList.add('py-3')
+        } else {
+            responsiveNavItems.classList.remove('py-3')
+        }
+
+    };
+
+    // Shrink the navbar buttons
+    navLinkShrink();
+
+    // Shrink the navbar buttons when page is scrolled
+    document.addEventListener('scroll', navLinkShrink);
 
     // Activate Bootstrap scrollspy on the main nav element
     const mainNav = document.body.querySelector('#mainNav');
