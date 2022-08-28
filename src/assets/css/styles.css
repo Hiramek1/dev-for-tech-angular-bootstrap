@@ -11459,7 +11459,7 @@ html {
     font-size: 1.5rem;
   }
 }
-.portfolio .portfolio-item {
+.dashboard .dashboard-item {
   cursor: pointer;
   position: relative;
   display: block;
@@ -11467,7 +11467,7 @@ html {
   border-radius: 0.5rem;
   overflow: hidden;
 }
-.portfolio .portfolio-item .portfolio-item-caption {
+.dashboard .dashboard-item .dashboard-item-caption {
   position: absolute;
   top: 0;
   left: 0;
@@ -11475,24 +11475,24 @@ html {
   opacity: 0;
   background-color: rgba(26, 188, 156, 0.9);
 }
-.portfolio .portfolio-item .portfolio-item-caption:hover {
+.dashboard .dashboard-item .dashboard-item-caption:hover {
   opacity: 1;
 }
-.portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
+.dashboard .dashboard-item .dashboard-item-caption .dashboard-item-caption-content {
   font-size: 1.5rem;
 }
 
-.portfolio-modal .btn-close {
+.dashboard-modal .btn-close {
   color: #1abc9c;
   font-size: 2rem;
   padding: 1rem;
 }
-.portfolio-modal .portfolio-modal-title {
+.dashboard-modal .dashboard-modal-title {
   font-size: 2.25rem;
   line-height: 2rem;
 }
 @media (min-width: 992px) {
-  .portfolio-modal .portfolio-modal-title {
+  .dashboard-modal .dashboard-modal-title {
     font-size: 3rem;
     line-height: 2.5rem;
   }

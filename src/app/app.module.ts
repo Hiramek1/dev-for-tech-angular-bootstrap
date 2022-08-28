@@ -8,7 +8,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { AboutComponent } from './pages/about/about.component';
-import { ClienteFormComponent } from './pages/cliente-form/cliente-form.component';
+import { HoldingFormComponent } from './pages/holding-form/holding-form.component';
+import { ClientFormComponent } from './pages/client-form/client-form.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ClienteFormComponent } from './pages/cliente-form/cliente-form.componen
     HomeComponent,
     MenuComponent,
     AboutComponent,
-    ClienteFormComponent
+    HoldingFormComponent,
+    ClientFormComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
