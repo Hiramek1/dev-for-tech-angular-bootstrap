@@ -20,53 +20,47 @@
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
                 <form id="registerForm" data-sb-form-api-token="API_TOKEN">
-                    <!-- Name input-->
+                    <!-- Enterprise name input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="name" type="text" placeholder="Digite seu nome..." data-sb-validations="required" />
-                        <label for="name">Nome completo</label>
-                        <div class="invalid-feedback" data-sb-feedback="name:required">Digite seu nome completo.</div>
+                        <input class="form-control" id="nameInc" name="nameinc" type="text" placeholder="Digite o nome da empresa..." [(ngModel)]="holding.nameinc" data-sb-validations="required" />
+                        <label for="nameInc">Remetente</label>
+                        <div class="invalid-feedback" data-sb-feedback="nameInc:required">Digite o nome da empresa.</div>
                     </div>
-                    <!-- CPF input-->
+                    <!-- CNPJ input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="cpf" type="cpf" placeholder="123.456.789-10" data-sb-validations="required" />
-                        <label for="cpf">CPF</label>
-                        <div class="invalid-feedback" data-sb-feedback="cpf:required">Digite um CPF válido.</div>
-                    </div>
-                    <!-- Phone input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="phone" type="tel" placeholder="(81) 99896-6988" data-sb-validations="required" />
-                        <label for="phone">Telefone</label>
-                        <div class="invalid-feedback" data-sb-feedback="phone:required">Digite um telefone.</div>
-                    </div>
-                    <!-- Email address input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="email" type="email" placeholder="nome@dominio.com.br" data-sb-validations="required, email" />
-                        <label for="email">E-mail</label>
-                        <div class="invalid-feedback" data-sb-feedback="email:required">Digite um e-mail válido.</div>
+                        <input class="form-control" id="cnpj" name="cnpj" type="cnpj" placeholder="99.999.999/9999-99" [(ngModel)]="holding.cnpj" data-sb-validations="required" />
+                        <label for="cnpj">CNPJ</label>
+                        <div class="invalid-feedback" data-sb-feedback="cnpj:required">Digite um CNPJ válido.</div>
                     </div>
                     <!-- Street address input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="street" type="street" placeholder="Praça dos Três Poderes" data-sb-validations="required" />
+                        <input class="form-control" id="street" name="street" type="street" placeholder="Praça dos Três Poderes" [(ngModel)]="holding.street" data-sb-validations="required" />
                         <label for="street">Rua</label>
                         <div class="invalid-feedback" data-sb-feedback="street:required">Digite um endereço.</div>
                     </div>
                     <!-- Street number input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="number" type="number" placeholder="1234" data-sb-validations="required" />
+                        <input class="form-control" id="number" name="number" type="number" placeholder="1234" [(ngModel)]="holding.number" data-sb-validations="required" />
                         <label for="number">Número</label>
                         <div class="invalid-feedback" data-sb-feedback="number:required">Digite um número.</div>
                     </div>
                     <!-- City input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="city" type="city" placeholder="Praça dos Três Poderes" data-sb-validations="required" />
+                        <input class="form-control" id="city" name="city" type="city" placeholder="Brasília" [(ngModel)]="holding.city" data-sb-validations="required" />
                         <label for="city">Cidade</label>
-                        <div class="invalid-feedback" data-sb-feedback="city:required">Digite sua cidade.</div>
+                        <div class="invalid-feedback" data-sb-feedback="city:required">Digite a cidade da empresa.</div>
                     </div>
                     <!-- State input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="state" type="state" placeholder="Praça dos Três Poderes" data-sb-validations="required" />
+                        <input class="form-control" id="state" name="state" type="state" placeholder="Distrito Federal" [(ngModel)]="holding.state" data-sb-validations="required" />
                         <label for="state">Estado</label>
-                        <div class="invalid-feedback" data-sb-feedback="state:required">Digite seu Estado.</div>
+                        <div class="invalid-feedback" data-sb-feedback="state:required">Digite o Estado da empresa.</div>
+                    </div>
+                    <!-- Shipping input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="shipping" name="shipping" type="shipping" placeholder="99,99" [(ngModel)]="holding.shipping" data-sb-validations="required" />
+                        <label for="shipping">Frete</label>
+                        <div class="invalid-feedback" data-sb-feedback="shipping:required">Digite o valor do frete.</div>
                     </div>
                     <!-- Submit success message-->
                     <!---->

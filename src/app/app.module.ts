@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,9 +9,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { AboutComponent } from './pages/about/about.component';
-import { HoldingFormComponent } from './pages/holding-form/holding-form.component';
-import { ClientFormComponent } from './pages/client-form/client-form.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { CustomerComponent } from './pages/register/customer/customer.component';
+import { HoldingComponent } from './pages/register/holding/holding.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,14 @@ import { RegisterComponent } from './pages/register/register.component';
     HomeComponent,
     MenuComponent,
     AboutComponent,
-    HoldingFormComponent,
-    ClientFormComponent,
-    RegisterComponent
+    RegisterComponent,
+    CustomerComponent,
+    HoldingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

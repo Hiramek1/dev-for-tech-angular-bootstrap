@@ -1,6 +1,6 @@
+import { HoldingComponent } from './pages/register/holding/holding.component';
+import { CustomerComponent } from './pages/register/customer/customer.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { HoldingFormComponent } from './pages/holding-form/holding-form.component';
-import { ClientFormComponent } from './pages/client-form/client-form.component';
 import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
@@ -10,8 +10,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'register/client-form', component: ClientFormComponent },
-  { path: 'register/holding-form', component: HoldingFormComponent }
+  { path: 'register/customer', component: CustomerComponent },
+  { path: 'register/holding', component: HoldingComponent }
 ];
 
 @NgModule({
