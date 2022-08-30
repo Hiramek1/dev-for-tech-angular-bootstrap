@@ -31,46 +31,6 @@
                     <img class="img-fluid" src="assets/img/dashboard/cake.png" alt="..." />
                 </div>
             </div>
-            <!-- Dashboard Item 3-->
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="dashboard-item mx-auto" data-bs-toggle="modal" data-bs-target="#dashboardModal3">
-                    <div class="dashboard-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="dashboard-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
-                    </div>
-                    <img class="img-fluid" src="assets/img/dashboard/circus.png" alt="..." />
-                </div>
-            </div>
-            <!-- Dashboard Item 4-->
-            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                <div class="dashboard-item mx-auto" data-bs-toggle="modal" data-bs-target="#dashboardModal4">
-                    <div class="dashboard-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="dashboard-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
-                    </div>
-                    <img class="img-fluid" src="assets/img/dashboard/game.png" alt="..." />
-                </div>
-            </div>
-            <!-- Dashboard Item 5-->
-            <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                <div class="dashboard-item mx-auto" data-bs-toggle="modal" data-bs-target="#dashboardModal5">
-                    <div class="dashboard-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="dashboard-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
-                    </div>
-                    <img class="img-fluid" src="assets/img/dashboard/safe.png" alt="..." />
-                </div>
-            </div>
-            <!-- Dashboard Item 6-->
-            <div class="col-md-6 col-lg-4">
-                <div class="dashboard-item mx-auto" data-bs-toggle="modal" data-bs-target="#dashboardModal6">
-                    <div class="dashboard-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="dashboard-item-caption-content text-center text-white"><i
-                                class="fas fa-plus fa-3x"></i></div>
-                    </div>
-                    <img class="img-fluid" src="assets/img/dashboard/submarine.png" alt="..." />
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -87,19 +47,36 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <!-- Dashboard Modal - Title-->
-                            <h2 class="dashboard-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+                            <h2 class="dashboard-modal-title text-secondary text-uppercase mb-0">Nossas Empresas</h2>
                             <!-- Icon Divider-->
                             <div class="divider-custom">
                                 <div class="divider-custom-line"></div>
                                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                 <div class="divider-custom-line"></div>
                             </div>
-                            <!-- Dashboard Modal - Image-->
-                            <img class="img-fluid rounded mb-5" src="assets/img/dashboard/cabin.png" alt="..." />
-                            <!-- Dashboard Modal - Text-->
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit
-                                asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            <!-- Dashboard Modal - Table-->
+                            <img class="img-fluid rounded mb-5" *ngIf="!holdings || holdings.length == 0"
+                                src="assets/img/dashboard/wip.png" alt="..." />
+                            <table class="table" *ngIf="holdings && holdings.length > 0">
+                                <thead>
+                                    <tr *ngFor="let holding">
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">CNPJ</th>
+                                        <th scope="col">Cidade</th>
+                                        <th scope="col">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let holding of holdings">
+                                        <td></td>
+                                        <td>{{holding.nameinc}}</td>
+                                        <td>{{holding.cnpj}}</td>
+                                        <td>{{holding.city}}</td>
+                                        <td>{{holding.state}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 Close Window
@@ -123,163 +100,36 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <!-- Dashboard Modal - Title-->
-                            <h2 class="dashboard-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
+                            <h2 class="dashboard-modal-title text-secondary text-uppercase mb-0">Nossos Clientes</h2>
                             <!-- Icon Divider-->
                             <div class="divider-custom">
                                 <div class="divider-custom-line"></div>
                                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                 <div class="divider-custom-line"></div>
                             </div>
-                            <!-- Dashboard Modal - Image-->
-                            <img class="img-fluid rounded mb-5" src="assets/img/dashboard/cake.png" alt="..." />
-                            <!-- Dashboard Modal - Text-->
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit
-                                asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" data-bs-dismiss="modal">
-                                <i class="fas fa-xmark fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Dashboard Modal 3-->
-<div class="dashboard-modal modal fade" id="dashboardModal3" tabindex="-1" aria-labelledby="dashboardModal3"
-    aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                    aria-label="Close"></button></div>
-            <div class="modal-body text-center pb-5">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Dashboard Modal - Title-->
-                            <h2 class="dashboard-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
-                            <!-- Icon Divider-->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Dashboard Modal - Image-->
-                            <img class="img-fluid rounded mb-5" src="assets/img/dashboard/circus.png" alt="..." />
-                            <!-- Dashboard Modal - Text-->
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit
-                                asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" data-bs-dismiss="modal">
-                                <i class="fas fa-xmark fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Dashboard Modal 4-->
-<div class="dashboard-modal modal fade" id="dashboardModal4" tabindex="-1" aria-labelledby="dashboardModal4"
-    aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                    aria-label="Close"></button></div>
-            <div class="modal-body text-center pb-5">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Dashboard Modal - Title-->
-                            <h2 class="dashboard-modal-title text-secondary text-uppercase mb-0">Controller</h2>
-                            <!-- Icon Divider-->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Dashboard Modal - Image-->
-                            <img class="img-fluid rounded mb-5" src="assets/img/dashboard/game.png" alt="..." />
-                            <!-- Dashboard Modal - Text-->
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit
-                                asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" data-bs-dismiss="modal">
-                                <i class="fas fa-xmark fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Dashboard Modal 5-->
-<div class="dashboard-modal modal fade" id="dashboardModal5" tabindex="-1" aria-labelledby="dashboardModal5"
-    aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                    aria-label="Close"></button></div>
-            <div class="modal-body text-center pb-5">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Dashboard Modal - Title-->
-                            <h2 class="dashboard-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
-                            <!-- Icon Divider-->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Dashboard Modal - Image-->
-                            <img class="img-fluid rounded mb-5" src="assets/img/dashboard/safe.png" alt="..." />
-                            <!-- Dashboard Modal - Text-->
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit
-                                asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" data-bs-dismiss="modal">
-                                <i class="fas fa-xmark fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Dashboard Modal 6-->
-<div class="dashboard-modal modal fade" id="dashboardModal6" tabindex="-1" aria-labelledby="dashboardModal6"
-    aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                    aria-label="Close"></button></div>
-            <div class="modal-body text-center pb-5">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Dashboard Modal - Title-->
-                            <h2 class="dashboard-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                            <!-- Icon Divider-->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Dashboard Modal - Image-->
-                            <img class="img-fluid rounded mb-5" src="assets/img/dashboard/submarine.png" alt="..." />
-                            <!-- Dashboard Modal - Text-->
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit
-                                asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            <!-- Dashboard Modal - Table-->
+                            <img class="img-fluid rounded mb-5" *ngIf="!customers || customers.length == 0"
+                                src="assets/img/dashboard/wip.png" alt="..." />
+                            <table class="table" *ngIf="customers && customers.length > 0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Bairro</th>
+                                        <th scope="col">Cidade</th>
+                                        <th scope="col">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let customer of customers">
+                                        <td></td>
+                                        <td>{{customer.name}}</td>
+                                        <td>{{customer.district}}</td>
+                                        <td>{{customer.city}}</td>
+                                        <td>{{customer.state}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 Close Window

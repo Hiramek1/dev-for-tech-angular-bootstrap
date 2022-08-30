@@ -23,7 +23,6 @@ export class CustomerComponent implements OnInit {
 
   updateCustomers(){
     customerService.addCustomer(this.customer)
-    this.showCustomers()
   }
 
   public showCustomers() {
