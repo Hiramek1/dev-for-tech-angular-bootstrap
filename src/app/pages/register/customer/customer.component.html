@@ -44,6 +44,12 @@
                         <label for="email">E-mail</label>
                         <div class="invalid-feedback" data-sb-feedback="email:required">Digite um e-mail válido.</div>
                     </div>
+                    <!-- Postal code input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="zip" (blur)="getViaCep()" name="zip" type="zip" placeholder="50.500-000" [(ngModel)]="customer.zip" data-sb-validations="required" />
+                        <label for="zip">CEP</label>
+                        <div class="invalid-feedback" data-sb-feedback="zip:required">Digite um CEP.</div>
+                    </div>
                     <!-- Street address input-->
                     <div class="form-floating mb-3">
                         <input class="form-control" id="street" name="street" type="street" placeholder="Praça dos Três Poderes" [(ngModel)]="customer.street" data-sb-validations="required" />
@@ -55,6 +61,17 @@
                         <input class="form-control" id="number" name="number" type="number" placeholder="1234" [(ngModel)]="customer.number" data-sb-validations="required" />
                         <label for="number">Número</label>
                         <div class="invalid-feedback" data-sb-feedback="number:required">Digite um número.</div>
+                    </div>
+                    <!-- Number details input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="compl" name="compl" type="compl" placeholder="Apto. 001" [(ngModel)]="customer.details" />
+                        <label for="compl">Complemento</label>
+                    </div>
+                    <!-- District input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="dist" name="dist" type="dist" placeholder="Brasília" [(ngModel)]="customer.district" data-sb-validations="required" />
+                        <label for="dist">Bairro</label>
+                        <div class="invalid-feedback" data-sb-feedback="dist:required">Digite seu bairro.</div>
                     </div>
                     <!-- City input-->
                     <div class="form-floating mb-3">
@@ -85,7 +102,7 @@
                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Ocorreu um erro ao realizar o cadastro!</div></div>
                     <!-- Form Submit Cancel Buttons-->
                     <div class="d-inline-block">
-                        <button class="btn btn-primary btn-xl" id="submitButton" type="submit" (click)="viewModel()">Enviar</button>
+                        <button class="btn btn-primary btn-xl" id="sendButton" type="submit" (click)="updateCustomers()">Enviar</button>
                         <button class="btn btn-primary btn-xl" id="cancelButton" type="cancel" routerLink="/register">Cancelar</button>
                     </div>
                 </form>

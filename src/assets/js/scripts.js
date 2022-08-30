@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     var navLinkShrink = function () {
         const responsiveNavItems = [].slice.call(
-            document.querySelectorAll('#navbarResponsive .nav-link')
+            document.querySelectorAll('#navbarResponsive.nav-link')
         );
         if (!responsiveNavItems) {
             return;

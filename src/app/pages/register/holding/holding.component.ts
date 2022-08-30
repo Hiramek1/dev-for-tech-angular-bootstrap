@@ -1,3 +1,4 @@
+import { holdingService } from './../../../services/holdingService';
 import { Holding } from './../../../models/holding';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,6 +14,16 @@ export class HoldingComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public holding:Holding = {} as Holding
+  private holdings: Holding[] = holdingService.listHoldings()
+  public holding: Holding = {} as Holding
+
+  public updateHoldings() {
+    holdingService.addHolding(this.holding)
+    this.showHoldings()
+  }
+
+  public showHoldings() {
+    this.holdings = holdingService.listHoldings()
+  }
 
 }

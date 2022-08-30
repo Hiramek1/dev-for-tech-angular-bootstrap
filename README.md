@@ -1,6 +1,10 @@
-# CopaDoMundo
+# Dev for Tech
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
+
+## Json Server
+
+Run `json-server --watch db.json` for a json server. You are now able to call `http://localhost:3000/` routes and perform HTTP requests.
 
 ## Development server
 
