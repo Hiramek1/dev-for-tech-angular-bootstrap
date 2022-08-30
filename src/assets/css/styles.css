@@ -11511,7 +11511,7 @@ html {
   background-color: #1a252f;
 }
 
-table tr:nth-child(2){
+table tr:nth-child(1){
   counter-reset: rowNumber;
 }
 table tr {

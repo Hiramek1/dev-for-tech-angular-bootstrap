@@ -1,0 +1,30 @@
+{
+    "holdings": [
+        {
+            "id": 1,
+            "name": "Primeiro Segundo Terceiro da Silva Quinto",
+            "cpf": "123.456.789-10",
+            "email": "primeiro.quinto@dominio.com.br",
+            "phone": "(81)98989-9898",
+            "zip": "50000001",
+            "street": "Rua dos Bobos",
+            "number": 9,
+            "details": "D-05",
+            "district": "Várzea",
+            "city": "São Paulo",
+            "state": "SP"
+        }
+    ],
+    "customers": [
+        {
+            "id": 1,
+            "nameinc": "Hadouken Inc",
+            "cnpj": "99.999.999/9999-99",
+            "street": "Praça dos Três Poderes",
+            "number": 999,
+            "city": "Brasília",
+            "state": "DF",
+            "shipping": 74.68
+        }
+    ]
+}
