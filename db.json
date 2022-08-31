@@ -39,6 +39,16 @@
       "city": "Brasília",
       "state": "DF",
       "shipping": 74.68
+    },
+    {
+      "nameinc": "Teste Inc",
+      "cnpj": "111.111.111/1111-11",
+      "street": "Setor Palácio Presidencial",
+      "number": 1,
+      "city": "Brasília",
+      "state": "DF",
+      "shipping": "1.000.000.000.000,00",
+      "id": 2
     }
   ]
 }

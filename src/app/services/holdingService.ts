@@ -9,7 +9,7 @@ export class holdingService {
     private static holdings:Holding[] = []
 
     async addHolding(holding:Holding){
-        await this.http.post<Holding>("http://localhost:3000/customers", holding).toPromise()
+        await this.http.post<Holding>("http://localhost:3000/holdings", holding).toPromise()
         holdingService.holdings.push(holding)
     }
 
