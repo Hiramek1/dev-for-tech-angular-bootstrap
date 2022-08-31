@@ -1,7 +1,8 @@
+import { environment } from './../../environments/environment';
 import { Customer } from '../models/customer';
 import { HttpClient } from "@angular/common/http";
 
-export class customerService {
+export class CustomerService {
     constructor(private http: HttpClient) {
         
     }
@@ -9,7 +10,11 @@ export class customerService {
     private static customers:Customer[] = []
 
     async addCustomer(customer:Customer){
-        await this.http.post<Customer>("http://localhost:3000/customers", customer).toPromise()
-        customerService.customers.push(customer)
+        await this.http.post<Customer>(`${environment.jsonHost}/customers`, customer).toPromise()
+        CustomerService.customers.push(customer)
+    }
+
+    public async listCustomers(){
+        return await this.http.get<Customer[]>(`${environment.jsonHost}/customers`).toPromise()
     }
 }

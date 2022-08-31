@@ -1,7 +1,8 @@
-import { Holding } from './../models/holding';
+import { environment } from './../../environments/environment';
+import { Holding } from '../models/holding';
 import { HttpClient } from "@angular/common/http";
 
-export class holdingService {
+export class HoldingService {
     constructor(private http: HttpClient) {
         
     }
@@ -9,8 +10,12 @@ export class holdingService {
     private static holdings:Holding[] = []
 
     async addHolding(holding:Holding){
-        await this.http.post<Holding>("http://localhost:3000/holdings", holding).toPromise()
-        holdingService.holdings.push(holding)
+        await this.http.post<Holding>(`${environment.jsonHost}/holdings`, holding).toPromise()
+        HoldingService.holdings.push(holding)
+    }
+
+    public async listHoldings(){
+        return await this.http.get<Holding[]>(`${environment.jsonHost}/holdings`).toPromise()
     }
 
 }

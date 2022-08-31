@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { holdingService } from './../../../services/holdingService';
+import { HoldingService } from '../../../services/HoldingService';
 import { Holding } from './../../../models/holding';
 import { Component, OnInit } from '@angular/core';
 
@@ -18,7 +18,7 @@ export class HoldingComponent implements OnInit {
   public holding: Holding = {} as Holding
 
   public async updateHoldings() {
-    new holdingService(this.http).addHolding(this.holding)
+    new HoldingService(this.http).addHolding(this.holding)
   }
 
 }

@@ -1,7 +1,8 @@
-import { Cep } from './../models/viaCep';
+import { environment } from './../../environments/environment';
+import { Cep } from '../models/viaCep';
 import { HttpClient } from "@angular/common/http";
 
-export class viaCepService {
+export class ViaCepService {
     constructor(private http: HttpClient)
     {
 
@@ -9,7 +10,7 @@ export class viaCepService {
 
     public async getViaCepAsync(cep:string) : Promise<Cep|undefined>{
         cep = cep.replace(/- | |\./g, "").trim()
-        return await this.http.get<Cep>(`https://viacep.com.br/ws/${cep}/json/`).toPromise()
+        return await this.http.get<Cep>(`${environment.cepHost}/${cep}/json/`).toPromise()
 
     }
 }
