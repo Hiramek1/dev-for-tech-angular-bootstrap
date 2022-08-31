@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { holdingService } from './../../../services/holdingService';
 import { Holding } from './../../../models/holding';
 import { Component, OnInit } from '@angular/core';
@@ -9,21 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HoldingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  private holdings: Holding[] = holdingService.listHoldings()
   public holding: Holding = {} as Holding
 
-  public updateHoldings() {
-    holdingService.addHolding(this.holding)
-    this.showHoldings()
-  }
-
-  public showHoldings() {
-    this.holdings = holdingService.listHoldings()
+  public async updateHoldings() {
+    new holdingService(this.http).addHolding(this.holding)
   }
 
 }

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { holdingService } from './../../services/holdingService';
 import { Holding } from './../../models/holding';
 import { customerService } from './../../services/customerService';
@@ -11,12 +12,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getCustomers()
+    this.getHolding()
   }
 
-  public customers: Customer[] = customerService.listCustomers()
-  public holdings: Holding[] = holdingService.listHoldings()
+  public customers: Customer[] | undefined
+  public holdings: Holding[] | undefined
+
+  private async getCustomers(){
+    this.customers = await this.http.get<Customer[]>("http://localhost:3000/customers").toPromise()
+  }
+  private async getHolding(){
+    this.holdings = await this.http.get<Holding[]>("http://localhost:3000/holdings").toPromise()
+  }
 
 }

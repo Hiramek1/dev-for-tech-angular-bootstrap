@@ -17,16 +17,11 @@ export class CustomerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public customers: Customer[] = customerService.listCustomers()
   public customer:Customer = {} as Customer
   public cep:Cep|undefined = {} as Cep
 
-  updateCustomers(){
-    customerService.addCustomer(this.customer)
-  }
-
-  public showCustomers() {
-    this.customers = customerService.listCustomers()
+  public async updateCustomers(){
+    new customerService(this.http).addCustomer(this.customer)
   }
 
   public async getViaCep(){
